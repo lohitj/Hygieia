@@ -8,6 +8,12 @@
     RepoViewController.$inject = ['$q', '$scope','codeRepoData', 'pullRepoData', 'issueRepoData', 'collectorData', '$uibModal'];
     function RepoViewController($q, $scope, codeRepoData, pullRepoData, issueRepoData, collectorData, $uibModal) {
         var ctrl = this;
+        console.log(collectorData.getCollectorItemById("5e9055bfbdcace0472d92cc2"));
+		collectorData.getCollectorItemById("5e9055bfbdcace0472d92cc2").then(function (response,data) {
+ 		console.log(response);
+         $('#divResult').html('Title from response:    '
+            + response.collector.name);
+});
 
         ctrl.combinedChartOptions = {
             plugins: [
